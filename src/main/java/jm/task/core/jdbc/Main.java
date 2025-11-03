@@ -10,12 +10,13 @@ import java.sql.*;
 public class Main {
     public static void main(String[] args){
         // implement algorithm here
-        UserDao userDao = new UserDaoHibernateImpl();
+        UserDao userDao = new UserDaoJDBCImpl();
         userDao.createUsersTable();
         userDao.saveUser("John", "Doe", (byte) 30);
         userDao.saveUser("Jane", "Smith", (byte) 25);
         userDao.saveUser("Mike", "Johnson", (byte) 40);
         userDao.saveUser("Emily", "Davis", (byte) 22);
+//        userDao.removeUserById(24);
 
         for (User user: userDao.getAllUsers()){
             System.out.println(user);
