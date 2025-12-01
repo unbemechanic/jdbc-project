@@ -1,0 +1,9 @@
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\dao\UserDao.java
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\dao\UserDaoHibernateImpl.java
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\dao\UserDaoJDBCImpl.java
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\Main.java
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\model\User.java
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\service\UserService.java
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\service\UserServiceImpl.java
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\util\HibernateUtil.java
+C:\habsida-lessons\project_prerequisite\src\main\java\jm\task\core\jdbc\util\Util.java

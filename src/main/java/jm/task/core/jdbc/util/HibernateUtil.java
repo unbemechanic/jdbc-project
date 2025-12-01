@@ -25,10 +25,11 @@ public class HibernateUtil {
                 }
 
                 Properties props = new Properties();
+                Properties settings = new Properties();
+
                 props.load(input);
                 Configuration configuration = new Configuration();
 
-                Properties settings = new Properties();
                 settings.put(Environment.DRIVER, props.getProperty("db.driver"));
                 settings.put(Environment.URL, props.getProperty("db.url"));
                 settings.put(Environment.USER, props.getProperty("db.user"));
