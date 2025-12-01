@@ -4,21 +4,23 @@ import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.service.UserService;
+import jm.task.core.jdbc.service.UserServiceImpl;
 
 import java.sql.*;
 
 public class Main {
     public static void main(String[] args){
         // implement algorithm here
-        UserDao userDao = new UserDaoJDBCImpl();
-        userDao.createUsersTable();
-        userDao.saveUser("John", "Doe", (byte) 30);
-        userDao.saveUser("Jane", "Smith", (byte) 25);
-        userDao.saveUser("Mike", "Johnson", (byte) 40);
-        userDao.saveUser("Emily", "Davis", (byte) 22);
+        UserService userService = new UserServiceImpl();
+        userService.createUsersTable();
+        userService.saveUser("John", "Doe", (byte) 30);
+        userService.saveUser("Jane", "Smith", (byte) 25);
+        userService.saveUser("Mike", "Johnson", (byte) 40);
+        userService.saveUser("Emily", "Davis", (byte) 22);
 //        userDao.removeUserById(24);
 
-        for (User user: userDao.getAllUsers()){
+        for (User user: userService.getAllUsers()){
             System.out.println(user);
         }
 
