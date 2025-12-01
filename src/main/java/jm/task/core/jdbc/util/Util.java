@@ -3,18 +3,22 @@ package jm.task.core.jdbc.util;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
 public class Util {
-    private static final String FILE = "config.properties";
-
     public static Connection getConnection() {
         Properties props = new Properties();
-        try {
-            props.load(new FileInputStream(FILE));
+
+        try(InputStream input = Util.class.getClassLoader().getResourceAsStream("config.properties")) {
+            if (input == null) {
+                throw new FileNotFoundException("config.properties not found!");
+            }
+
+            props.load(input);
             String URL = props.getProperty("db.url");
             String USERNAME = props.getProperty("db.user");
             String PASSWORD = props.getProperty("db.password");
