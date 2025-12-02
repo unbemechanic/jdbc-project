@@ -64,6 +64,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         String sql = "SELECT * FROM users";
+
         try(Connection connection = Util.getConnection();
                 Statement statement = connection.createStatement();
                 ResultSet rs = statement.executeQuery(sql)){
@@ -78,6 +79,7 @@ public class UserDaoJDBCImpl implements UserDao {
             }
         }catch (SQLException e) {
             e.printStackTrace();
+            return new ArrayList<>();
         }
 
         return users;
